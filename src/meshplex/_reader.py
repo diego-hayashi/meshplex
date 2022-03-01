@@ -1,4 +1,4 @@
-import meshio
+# import meshio
 import numpy as np
 
 from ._mesh_tetra import MeshTetra
@@ -40,4 +40,5 @@ def read(filename):
     :type filenames: str
     :returns mesh{2,3}d: The mesh data.
     """
+    import meshio
     return from_meshio(meshio.read(filename))

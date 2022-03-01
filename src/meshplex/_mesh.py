@@ -2,7 +2,7 @@ from __future__ import annotations
 import math
 import pathlib
 import warnings
-import meshio
+# import meshio
 import npx
 import numpy as np
 from ._exceptions import MeshplexError
@@ -409,6 +409,7 @@ class Mesh:
             assert self.cells('points').shape[1
                 ] == 4, 'Only triangles/tetrahedra supported'
             cell_type = 'tetra'
+        import meshio
         meshio.Mesh(a, {cell_type: self.cells('points')}, point_data=
             point_data, cell_data=cell_data, field_data=field_data).write(
             filename)
